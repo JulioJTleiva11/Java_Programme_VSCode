@@ -53,23 +53,20 @@ public class FileChooserExample extends JFrame
 
       //hier wird die Logik vom Button erstellt
       JFileChooser fc = new JFileChooser();
-      fc.setCurrentDirectory(new File(".")); 
+      fc.setCurrentDirectory(new File(".")); //"." -> arbeite da, wo du grad bist
       //  "." is the current working directory.
 
       fc.setFileSelectionMode(
-          JFileChooser.FILES_AND_DIRECTORIES);
+      JFileChooser.FILES_AND_DIRECTORIES);
       // alternatively: FILES_ONLY, DIRECTORIES_ONLY
 
       // allow only a single file to be selected
       fc.setMultiSelectionEnabled(false);
 
-      if (fc.showOpenDialog(this) 
-          == JFileChooser.APPROVE_OPTION) { 
-    	// user pressed OK, ie. a selection is approved
-        String fname 
-               = fc.getSelectedFile().getAbsolutePath();
-        textArea.setText(textArea.getText() 
-        		         + fname + "\n");
+      if (fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) { 
+    	  // user pressed OK, ie. a selection is approved
+        String fname = fc.getSelectedFile().getAbsolutePath();
+        textArea.setText(textArea.getText() + fname + "\n");
       }
     }
   }

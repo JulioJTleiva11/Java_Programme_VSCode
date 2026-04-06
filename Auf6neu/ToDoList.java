@@ -57,8 +57,8 @@ public class ToDoList extends JFrame implements ActionListener {
         if (ev.getSource() == load) {
         //hier wird die Logik vom Button erstellt
       JFileChooser fc = new JFileChooser();
-      fc.setCurrentDirectory(new File(".")); 
-      //  "." is the current working directory.
+        fc.setCurrentDirectory(new File(".")); 
+        //  "." is the current working directory.
 
       fc.setFileSelectionMode(
           JFileChooser.FILES_AND_DIRECTORIES);
