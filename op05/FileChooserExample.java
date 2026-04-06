@@ -71,6 +71,9 @@ public class FileChooserExample extends JFrame
     }
   }
 
+
+  //das ist ein test
+  
   public static void main(String[] args) {
     new FileChooserExample();
   }
