@@ -45,7 +45,7 @@ public class ToDoList extends JFrame implements ActionListener {
     
     }
 
-    // das ist wieder ein test
+    
 
     // main bauen
     public static void main(String[] args){
