@@ -6,7 +6,6 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-import op07.serialisation.Comp;
 
 import java.awt.BorderLayout; //Für BorderLayout sonst geht nicht
 import java.awt.event.ActionEvent;
