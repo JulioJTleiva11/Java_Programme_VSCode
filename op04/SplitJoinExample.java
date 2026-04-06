@@ -8,9 +8,9 @@ package op04;
 
 public class SplitJoinExample {
   /**
-   * Splits a string and joins the parts again.
+   * Splits a string and joins the parts again.                     
    * @param args not used here 
-   * WICHTIGCSVdateienExportierenImportierenTrennenZusammenfügenbinden
+   * WICHTIGCSVdateienExportierenImportierenTrennenZusammenfügenbinden             ***CSV***
    */
   public static void main(String[] args) {
     //1. Text in einer String-Variable speichern
