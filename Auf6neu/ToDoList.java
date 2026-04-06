@@ -47,7 +47,7 @@ public class ToDoList extends JFrame implements ActionListener {
 
     
 
-    // main bauen
+    // main bauen ok ab hier geht los
     public static void main(String[] args){
         new ToDoList();  // starte und baue neue ToDoList
     }
