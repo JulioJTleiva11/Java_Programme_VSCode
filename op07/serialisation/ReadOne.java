@@ -7,6 +7,8 @@ import java.io.ObjectInputStream;
 public class ReadOne {
   
   public static void main(String[] args) {
+
+    // ObjectInputStream VERSUCHT AUFZUMACHEN dann ein object gelesen
     ObjectInputStream in = null;
 
     try {

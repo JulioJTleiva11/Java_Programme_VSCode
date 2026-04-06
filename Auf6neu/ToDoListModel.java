@@ -34,9 +34,9 @@ public class ToDoListModel extends AbstractTableModel{
     }
 
     @Override // was in den einzelnen Felder anzeigen?
-    public Object getValueAt(int rowIndex, int columnIndex) {
-        ToDoItem job = items.get(rowIndex);
-        switch (columnIndex) {
+    public Object getValueAt(int row, int col) {
+        ToDoItem job = items.get(row);
+        switch (col) {
             case 0: return job.getWhatToDo();
             case 1: return job.getContext();
             case 2: //Object der GregorianCalender es wird deprecated
@@ -66,8 +66,7 @@ public class ToDoListModel extends AbstractTableModel{
             case 0: return String.class;
             case 1: return String.class;
             case 2: return Date.class;//nicht GregorisanCalender!7hnjm,
-            //case 3: return 
-        
+            case 3: return Integer.class;        
             default: return Object.class;
         }
     }

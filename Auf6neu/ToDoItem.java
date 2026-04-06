@@ -51,10 +51,7 @@ public class ToDoItem implements Serializable { //mit Serializable, da lesen und
     //überschriebene ToString methode
     @Override
     public String toString(){
-        return whatToDo 
-                + "@ " + context 
-                + "until " + deadline 
-                + "with Priority " + priority;
+        return whatToDo + "@ " + context + "until " + deadline + "with Priority " + priority;
     }
 
 
