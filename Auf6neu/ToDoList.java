@@ -45,13 +45,10 @@ public class ToDoList extends JFrame implements ActionListener {
     
     }
 
-    
-
     // main bauen ok ab hier geht los
     public static void main(String[] args){
         new ToDoList();  // starte und baue neue ToDoList
     }
-
 
     @Override
     public void actionPerformed(ActionEvent ev) {
@@ -59,12 +56,10 @@ public class ToDoList extends JFrame implements ActionListener {
 
       //hier wird die Logik vom Button erstellt
       JFileChooser fc = new JFileChooser();
-      fc.setCurrentDirectory(new File(".")); //"." -> arbeite da, wo du grad bist
-      //  "." is the current working directory.
+      fc.setCurrentDirectory(new File(".")); //"." -> arbeite da, wo du grad bist. "." is the current working directory.
 
-      fc.setFileSelectionMode(
-      JFileChooser.FILES_AND_DIRECTORIES);
-      // alternatively: FILES_ONLY, DIRECTORIES_ONLY
+      //fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES); // FILES_AND_DIRECTORIES
+      fc.setFileSelectionMode(JFileChooser.FILES_ONLY); // alternatively: FILES_ONLY, DIRECTORIES_ONLY
 
       // allow only a single file to be selected
       fc.setMultiSelectionEnabled(false);
