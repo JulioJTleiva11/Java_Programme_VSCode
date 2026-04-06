@@ -53,8 +53,8 @@ public class ToDoListModel extends AbstractTableModel{
         switch (col) {
             case 0: return "Was?";
             case 1: return "Wo?";
-            case 3: return "Bis Wann?";
-            case 4: return "Wie Wichtig?";        
+            case 2: return "Bis Wann?";
+            case 3: return "Wie Wichtig?";        
             default: return "???";
         }
     }
@@ -65,7 +65,8 @@ public class ToDoListModel extends AbstractTableModel{
         switch (col) {
             case 0: return String.class;
             case 1: return String.class;
-            case 3: return Date.class;//nicht GregorisanCalender!7hnjm,
+            case 2: return Date.class;//nicht GregorisanCalender!7hnjm,
+            //case 3: return 
         
             default: return Object.class;
         }

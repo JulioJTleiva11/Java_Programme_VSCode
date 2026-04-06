@@ -6,14 +6,17 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import java.awt.BorderLayout; //Für BorderLayout sonst geht nicht
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 //Fenster mit der Liste bauen (JFrame abgeleitet)
-public class ToDoList extends JFrame {
+public class ToDoList extends JFrame implements ActionListener {
     
     
     private ToDoListModel model;
     private JTable table;
+    private JButton load;
 
 
     public ToDoList() {
@@ -29,8 +32,9 @@ public class ToDoList extends JFrame {
 
         load = new JButton("Laden");
         add(load, BorderLayout.SOUTH);
-        load.addActionListener(this);
-            
+        load.addActionListener(this); //damit der JButton was macht
+
+
 
         setSize(500, 500);
         setVisible(true);
@@ -42,6 +46,13 @@ public class ToDoList extends JFrame {
     //1 main bauen
     public static void main(String[] args){
         new ToDoList();  // starte und baue neue ToDoList
+    }
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
 
 }
