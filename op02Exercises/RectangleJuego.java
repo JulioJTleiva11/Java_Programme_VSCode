@@ -18,7 +18,7 @@ public class RectangleJuego implements GeoJuego{  //implementieren von GeoJuego 
     @Override
     public double getAreaJuego() {
             return height * width;
-        // TODO Auto-generated method stub
+        //TODO Auto-generated method stub
         //throw new UnsupportedOperationException("Unimplemented method 'getArea'");
     }
 

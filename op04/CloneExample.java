@@ -20,9 +20,9 @@ public class CloneExample implements Cloneable {   // 1. implements Cloneable
   public String toString() {
     return "L : (" + left.getReal() + "," 
                    + left.getImaginary()
-      +  ") R : (" + right.getReal() + ","  
+                   +  ") R : (" + right.getReal() + ","  
                    + right.getImaginary()
-      +  ")";
+                   +  ")";
   }
 
   @Override

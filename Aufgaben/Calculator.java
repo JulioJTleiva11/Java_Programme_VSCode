@@ -76,8 +76,8 @@ public class Calculator extends JFrame{
         lblErgebnis = new JLabel("Zu zahlender Betrag: ");
         this.add(lblErgebnis);
 
-        //this.setSize(700, 700);
-        this.pack(); //setSize automatisch anpassen
+        this.setSize(500, 600);
+        //this.pack(); //setSize automatisch anpassen
         this.setVisible(true);
     }
 

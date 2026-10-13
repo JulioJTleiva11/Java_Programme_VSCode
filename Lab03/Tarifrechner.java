@@ -20,7 +20,8 @@ public class Tarifrechner extends JFrame implements ActionListener {
     private JRadioButton saSo;
 
     //JLabel1
-    private JTextField anzahlPersonen; //???
+    private JTextField anzahlPersonen; //????
+
 
     //comboBox
     private JComboBox <String> comboBoxTicket;
