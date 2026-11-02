@@ -8,7 +8,7 @@ public class ActionListenerExample extends JFrame {
 
     public ActionListenerExample() {
         super("ActionListener Beispiel");
-        setSize(600, 600);//
+        setSize(600, 600);
         setLocation(new Point(390, 80));
         setResizable(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
