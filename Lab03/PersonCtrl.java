@@ -139,7 +139,7 @@ public class PersonCtrl extends JFrame implements ActionListener{
                 personToShow.setTitle(" ");
             }
             else{
-                personToShow.setTitle(title[select]);;
+                personToShow.setTitle(title[select]);
             }
 
         }
@@ -147,10 +147,5 @@ public class PersonCtrl extends JFrame implements ActionListener{
         
     
     }
-    
-
-    
-
-
 
 }
