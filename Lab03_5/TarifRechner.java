@@ -106,7 +106,7 @@ public class TarifRechner extends JFrame implements ActionListener{
 
     //Main
     public static void main(String[] args) {
-        new TarifRechner();
+        new TarifRechner();// ...
     }
 
     //ActionListener
