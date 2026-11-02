@@ -14,8 +14,7 @@ import javax.swing.JTextField;
  * @author Henning Dierks
  * @version 1.0
  */
-public class StringRequestDialog extends JDialog
-    implements ActionListener {
+public class StringRequestDialog extends JDialog implements ActionListener {
   private String enteredText = "";
   private JTextField textField = null;
 

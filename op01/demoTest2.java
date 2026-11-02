@@ -13,7 +13,7 @@ import javax.swing.JLabel;
  * version 1.1
  */
 
- @SuppressWarnings("serial")
+ //@SuppressWarnings("serial")
 public class demoTest2 extends JFrame //this generates a simple window
 {
     public demoTest2()//Constructor

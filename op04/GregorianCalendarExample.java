@@ -16,19 +16,14 @@ public class GregorianCalendarExample {
    * @param args not used here
    */
   public static void main(String[] args) {
-    SimpleDateFormat 
-      f = new SimpleDateFormat("d.M.yy H:mm");
+    SimpleDateFormat f = new SimpleDateFormat("d.M.yy H:mm");
     
     // Beware: Months are 0-11 !!!!
-    GregorianCalendar 
-      exam = new GregorianCalendar(2022,2 - 1,17,9,0); 
-    GregorianCalendar 
-      party = (GregorianCalendar) exam.clone();
-    party.add(Calendar.HOUR,3); // + 3 hours
+    GregorianCalendar exam = new GregorianCalendar(2022,2 - 1,17,9,0); 
+    GregorianCalendar party = (GregorianCalendar) exam.clone();
+    party.add(Calendar.HOUR, 3); // + 3 hours
 
-    System.out.println("Beginn der Prüfung : "
-        + f.format(exam.getTime()));
-    System.out.println("Beginn der Party   : "
-        + f.format(party.getTime()));
+    System.out.println("Beginn der Prüfung : " + f.format(exam.getTime()));
+    System.out.println("Beginn der Party   : " + f.format(party.getTime()));
   }
 }

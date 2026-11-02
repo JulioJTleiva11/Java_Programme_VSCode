@@ -13,24 +13,25 @@ public class Chess extends Game {
   public Board startGame() {
     //aufruf der Methode getBoard von Game, da extends Game
     //Board b = new ChessBoard(); //hier wird ChessBoard extra programmiert, also ein spezieller Fall von Bret->Schachtbret
-    setBoard(new ChessBoard());  //pon una nueva tabla
+    //setBoard(new ChessBoard());  //pon una nueva tabla. neuCodieren ohne Fehler
     return getBoard();           //dame la nueva tabla
   }
 
   @Override
   public void makeMove(Board b) {
-    // TODO Auto-generated method stub
+    // TO-DO Auto-generated method stub
+
   }
 
   @Override
   public Boolean isFinished(Board b) {
-    // TODO Auto-generated method stub
+    // TO-DO Auto-generated method stub
     return null;
   }
 
   @Override
   public void declareResult(Board b) {
-    // TODO Auto-generated method stub
+    // TO-DO Auto-generated method stub
   }   
 
   /* kann man ueberschreiben, wenn noetig:

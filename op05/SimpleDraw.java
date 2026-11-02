@@ -30,8 +30,7 @@ public class SimpleDraw extends JFrame {
     cnt.add(new DrawingArea(this),BorderLayout.CENTER);
 
     // add a combobox to select the thickness
-    thickness = new JComboBox<String>(
-                       new String[] { "1", "2", "3"});
+    thickness = new JComboBox<String>(new String[] { "1", "2", "3"});
     thickness.setPreferredSize(new Dimension(50,20));
     thickness.setMaximumSize(new Dimension(50,20));
     cnt.add(thickness,BorderLayout.SOUTH);

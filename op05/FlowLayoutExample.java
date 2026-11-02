@@ -23,8 +23,7 @@ public class FlowLayoutExample extends JFrame {
     Container c = getContentPane();
     c.setBackground(Color.white);
     // left aligned with gaps (vert. and horiz.)
-    c.setLayout(new FlowLayout(FlowLayout.RIGHT, 
-                               10, 10));
+    c.setLayout(new FlowLayout(FlowLayout.RIGHT, 10, 10));
     
     for (int i = 1; i <= 5; i++) {
       c.add(new MyPanel(i, 80+30*i, 75+25*i));

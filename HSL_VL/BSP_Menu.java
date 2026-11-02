@@ -1,12 +1,9 @@
 package HSL_VL;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -15,7 +12,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
- @SuppressWarnings("serial")
+//@SuppressWarnings("serial")
 public class BSP_Menu extends JFrame{
     //GUI Komponenten
     //private JPanel panelFenster;

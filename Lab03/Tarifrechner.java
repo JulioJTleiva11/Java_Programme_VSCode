@@ -1,79 +1,120 @@
 package Lab03;
-
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.GridLayout;
+/*
+Dies dient nur zur Anhaltspkt, es ist von KI
+*/
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 
-import javax.swing.ButtonGroup;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
+public class Tarifrechner extends JFrame {
 
-public class Tarifrechner extends JFrame implements ActionListener {
+    // GUI-Komponenten deklarieren
+    private JRadioButton rbWerktag, rbWochenende;
+    private JComboBox<String> cbTarif;
+    private JTextField tfPersonen;
+    private JButton btnBerechne;
+    private JLabel lblErgebnis; // Das geforderte JLabel für den Preis
 
-    //2 RadioButtons 
-    private JRadioButton moFr;
-    private JRadioButton saSo;
+    // Tarife und Preise (Mo-Fr) definieren
+    private final String[] tarife = {"Kurzstrecke", "Innerer Ring", "Ganze Stadt", "Tagesticket"};
+    private final double[] preise = {1.00, 2.20, 3.60, 8.20};
 
-    //JLabel1
-    private JTextField anzahlPersonen; //????
-
-
-    //comboBox
-    private JComboBox <String> comboBoxTicket;
-    private static final String[] ticket = {"Kurzstrecke", "Innerer Ring", "Ganze Stadt", "Tagesticket"};
-    private static final double[] ticketPreis = {1.00, 2.2, 3.6, 8.2};
-
-    //JLabel2
-
-    //JText
-
-    //JButton "Berechnen"
-
-    //Jtext berechnet
-
-    //Konstruktor
-    public Tarifrechner (){
-        super("Tarifrechner");//Titel des Fensters
+    public Tarifrechner() {
+        // Fenster-Einstellungen
+        setTitle("Tarifrechner");
+        setSize(400, 250);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Container c = getContentPane();
-        c.setBackground(Color.green);
-        c.setLayout(new GridLayout(0, 2, 20, 20));
-        
+        setLayout(new GridLayout(5, 2, 10, 10)); // Übersichtliches Raster-Layout
 
-        //RadioButtons erstellen, hinzufügen und RadioButtonsGroup
-        moFr = new JRadioButton("Mo-Fr", true);
-        saSo = new JRadioButton("Sa-So");
-        c.add(moFr);
-        //moFr.addActionListener(this);//nicht notwendig
-        c.add(saSo);
-        ButtonGroup tage = new ButtonGroup();
-        tage.add(moFr);
-        tage.add(saSo);
+        // (a) RadioButtons für Wochentag
+        rbWerktag = new JRadioButton("Mo-Fr", true);
+        rbWochenende = new JRadioButton("Sa-So");
+        ButtonGroup bgWochentag = new ButtonGroup();
+        bgWochentag.add(rbWerktag);
+        bgWochentag.add(rbWochenende);
 
-        //Label
-        c.add(new JLabel("Tarif"));
+        JPanel panelWochentag = new JPanel();
+        panelWochentag.add(rbWerktag);
+        panelWochentag.add(rbWochenende);
+
+        // (b) ComboBox für Tarife
+        cbTarif = new JComboBox<>(tarife);
+
+        // (c) JTextField für Personenanzahl
+        tfPersonen = new JTextField();
+
+        // (d) JButton für die Berechnung
+        btnBerechne = new JButton("Berechne");
+
+        // (e) JLabel für das Ergebnis
+        lblErgebnis = new JLabel("0,00 €");
+        lblErgebnis.setHorizontalAlignment(SwingConstants.RIGHT);
         
-        
-        setSize(700, 700);
-        setVisible(true);
+        // OPTIONAL: Wenn das JLabel wie ein graues Textfeld aussehen soll:
+        //lblErgebnis.setOpaque(true);
+        // lblErgebnis.setBackground(new Color(230, 230, 230));
+        // lblErgebnis.setBorder(BorderFactory.createLineBorder(Color.GRAY));
+
+        // Komponenten dem Fenster hinzufügen
+        add(new JLabel("Wochentag:"));
+        add(panelWochentag);
+        add(new JLabel("Tarif:"));
+        add(cbTarif);
+        add(new JLabel("Anzahl Personen:"));
+        add(tfPersonen);
+        add(new JLabel("")); // Platzhalter
+        add(btnBerechne);
+        add(new JLabel("Gesamtpreis:"));
+        add(lblErgebnis);
+
+        // Logik für den Button hinzufügen
+        btnBerechne.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                berechnePreis();
+            }
+        });
     }
 
-    //Main
+    private void berechnePreis() {
+        try {
+            // 1. Personenanzahl auslesen und validieren
+            String personenText = tfPersonen.getText().trim();
+            int anzahlPersonen = Integer.parseInt(personenText);
+
+            if (anzahlPersonen <= 0) {
+                lblErgebnis.setText("Fehler: Personen < 0!");
+                return;
+            }
+
+            // 2. Basispreis ermitteln
+            int ausgewählterIndex = cbTarif.getSelectedIndex();
+            double basisPreis = preise[ausgewählterIndex];
+
+            // 3. Wochenend-Rabatt anwenden (25% Reduzierung = 75% des Preises)
+            if (rbWochenende.isSelected()) {
+                basisPreis *= 0.75;
+            }
+
+            // 4. Gesamtpreis berechnen
+            double gesamtPreis = basisPreis * anzahlPersonen;
+
+            // 5. Formatierung auf exakt zwei Nachkommastellen
+            DecimalFormat df = new DecimalFormat("0.00");
+            lblErgebnis.setText(df.format(gesamtPreis) + " €");
+
+        } catch (NumberFormatException ex) {
+            // Fehlermeldung anzeigen, wenn keine gültige Ganzzahl eingegeben wurde
+            lblErgebnis.setText("Fehler: Ungültige Zahl!");
+        }
+    }
+
     public static void main(String[] args) {
-        new Tarifrechner();//neues Object Fenster erzeugt
+        // GUI im Event Dispatch Thread starten
+        SwingUtilities.invokeLater(() -> {
+            new Tarifrechner().setVisible(true);
+        });
     }
-
-
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
-    }
-
 }

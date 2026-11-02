@@ -11,8 +11,7 @@ public class GridLayoutExample extends JFrame {
    * Creates a window with thirteen panels.
    */
   public GridLayoutExample(int rows, int cols) {
-    super("GridLayout with (rows,cols)=("
-          + rows + "," + cols + ")");
+    super("GridLayout with (rows,cols)=(" + rows + "," + cols + ")");
 
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     Container c = getContentPane();
