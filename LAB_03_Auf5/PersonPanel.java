@@ -4,7 +4,7 @@ Autor        : Julio Jesus Tomasto Leiva
 Datum        : heute
 Beschreibung : 
  */
-package LAB_03;
+package LAB_03_Auf5;
 
 import java.awt.Color;
 import java.awt.Dimension;

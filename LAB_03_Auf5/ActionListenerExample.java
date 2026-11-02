@@ -1,4 +1,4 @@
-package LAB_03;
+package LAB_03_Auf5;
 
 import javax.swing.*;
 

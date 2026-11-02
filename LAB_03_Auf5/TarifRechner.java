@@ -1,4 +1,4 @@
-package Lab03_5;
+package LAB_03_Auf5;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -99,7 +99,7 @@ public class TarifRechner extends JFrame implements ActionListener{
         c.add(centerPanel);
 
         //JFrame Grund-Attrib
-        setLocation(new Point(400, 100));
+        setLocation(new Point(400, 100));//
         setSize(new Dimension(500, 700));
         setVisible(true);
     }
