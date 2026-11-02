@@ -26,10 +26,10 @@ class JPanelExample extends JPanel {
   protected void paintComponent(Graphics g) {
     super.paintComponent(g); // never forget!
     g.setColor(Color.red);   // we use red now
-    g.fillRect(10,30,230,80);// draw a rectangle
+    g.fillRect(10,30,430,80);// draw a rectangle
     g.setColor(Color.white); // we use white now
     g.setFont(new Font("Monospaced", Font.BOLD, 48));
-    g.drawString("Jippie!",20,80); // a write a text
+    g.drawString("Jippieyooo!",20,80); // a write a text
   }
 
   public static void main(String[] args) {

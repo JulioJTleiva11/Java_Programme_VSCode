@@ -54,7 +54,7 @@ public class CounterAccountEingabe {
         Scanner scanner1 = new Scanner(System.in);
         System.out.print("Ihr Name: ");
         String kontoinhaber = scanner1.nextLine();
-        //scanner1.close();
+        scanner1.close();
         return kontoinhaber;
     }
 
@@ -69,7 +69,7 @@ public class CounterAccountEingabe {
         System.out.print("Wie viel zum Einzahlen: ");
         eingabewert = scanner.nextDouble();  
         System.out.println("Ihre Einzahlung: " + eingabewert);
-        //scanner.close();
+        scanner.close();
         kontostand += eingabewert;
     }
 
@@ -79,7 +79,7 @@ public class CounterAccountEingabe {
         System.out.println("Wie viel zum Auszahlen: ");
         eingabewert = scanner.nextDouble();
         System.out.println("Ihre Auszahlung: " + eingabewert);
-        //scanner.close();
+        scanner.close();
         kontostand -= eingabewert;
     }
 
@@ -105,7 +105,7 @@ public class CounterAccountEingabe {
         System.out.print("wollen Sie einzahlen? j/n: ");
         Scanner reader = new Scanner(System.in);
         String input = reader.next();
-        //reader.close(); // close scanner after reading
+        reader.close(); // close scanner after reading
         if ("j".equals(input)) {            //WICHTIGvergleichSTRINGeingabe
             neuesKonto.einzahlung(-1); //das neue Object zu der Fkt übergeben
             System.out.println();
@@ -118,18 +118,21 @@ public class CounterAccountEingabe {
         System.out.print("wollen Sie Auszahlen? j/n: ");
         Scanner reader2 = new Scanner(System.in);
         String input2 = reader.next();
+        reader2.close();//lieber ausschneiden?
         if("j".equals(input2)){
             neuesKonto.auszahlung(-1);
             System.out.println();
             System.out.println("neuer Kontostand: " + neuesKonto.getKontostand());
         }else if ("n".equals(input2)) {
             return; // Programm beenden mit return
+            
         }
-
+        
         //BenutzerEingabe 2 ab hier lieber in einer switch case
         System.out.println("neues Kontoeröffnen? ");
         Scanner reader3 = new Scanner(System.in);
         String input3 = reader.next();
+        reader3.close();//lieber ausschneiden?
         if("j".equals(input3)){
             CounterAccountEingabe neuesKonto2 = new CounterAccountEingabe(leseStringEingabe(), nextKontonummer, 0.0);
             System.out.println();

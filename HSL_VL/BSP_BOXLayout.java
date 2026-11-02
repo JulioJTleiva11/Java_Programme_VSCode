@@ -2,6 +2,7 @@ package HSL_VL;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.*;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -17,7 +18,7 @@ public class BSP_BOXLayout extends JFrame{
     //GUI-Komponenten
     private JButton button1;
     private JTextField textField1;
-    private JComboBox comboBox1;
+    private JComboBox<String> comboBox1;
     private JLabel label1;
 
 
@@ -32,7 +33,8 @@ public class BSP_BOXLayout extends JFrame{
         // 1. Panel erstellen und BoxLayout zuweisen (Y_AXIS = von oben nach unten)
         JPanel panel1 = new JPanel();
         panel1.setLayout(new BoxLayout(panel1, BoxLayout.Y_AXIS));
-        //panel1.setLayout(new GridLayout(7, 2, 5, 5));
+        panel1.setBackground(Color.gray);
+        panel1.setLayout(new GridLayout(7, 2, 5, 5));
         
 
         //JButton init
@@ -43,6 +45,7 @@ public class BSP_BOXLayout extends JFrame{
 
         //JTextField init
         textField1 = new JTextField("JTextField1");
+        textField1.setPreferredSize(new Dimension(90, 50));
         panel1.add(textField1);
         
 

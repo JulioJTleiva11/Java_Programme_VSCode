@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-@SuppressWarnings("serial")
+//@SuppressWarnings("serial")
 public class Demo2 extends JFrame {
   /**
    * Generates a simple window.

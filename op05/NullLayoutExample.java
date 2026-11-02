@@ -32,7 +32,7 @@ public class NullLayoutExample extends JFrame {
     c.add(p1);
     c.add(p2);
 
-    setSize(300, 200);
+    setSize(300, 500);
     setVisible(true);
   }
 

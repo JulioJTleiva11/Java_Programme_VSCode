@@ -84,7 +84,7 @@ public class PersonCtrl extends JFrame implements ActionListener{
         givenName = new JTextField(50); //max 50 Char Eingabe
         /*JTextField() Feld wo man schreibt für Vorname */
         c.add(givenName); //hier erscheint das Feld zum Schreiben
-        givenName.addActionListener(this); //nicht nötig
+        givenName.addActionListener(this); //noch nicht nötig
 
         /*surname JLabel (icon, Text ...) */
         c.add(new JLabel("Nachname: ")); //Label Nachname
@@ -112,6 +112,7 @@ public class PersonCtrl extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) { //Methode der actionListener
        // okButton aktiv machen mit getSource()  
         if(e.getSource() == okButton){ //der letzte Button, also okButton, ist zuerst als if(){}
+            
             //getSource(), ob der Button aktiviert wurde?
             if(herr.isSelected()){
                 personToShow.setAddress("Herr");
@@ -139,7 +140,7 @@ public class PersonCtrl extends JFrame implements ActionListener{
                 personToShow.setTitle(" ");
             }
             else{
-                personToShow.setTitle(title[select]);;
+                personToShow.setTitle(title[select]);
             }
 
         }

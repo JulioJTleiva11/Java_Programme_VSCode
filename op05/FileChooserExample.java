@@ -23,7 +23,7 @@ public class FileChooserExample extends JFrame
   private JTextArea textArea;
 
 
-  /**
+  /*
    * Opens a FileChooser dialog.
    */
   public FileChooserExample() {

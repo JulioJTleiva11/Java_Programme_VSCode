@@ -7,7 +7,7 @@ public class Vehicle {
 
     public static void main(String[] args) {
         Vehicle v = new Vehicle();
-        v.kmToMiles(10);        
+       // v.kmToMiles(10);        
     }
     
 }

@@ -14,9 +14,9 @@ public abstract class Game {
     return board;
   }
 
-  public void setBoard(ChessBoard board) {
-    this.board = board;
-  }
+  //public void setBoard(ChessBoard board) {/
+    //this.board = board;
+  //}
 
 // get a new board with starting position
   public abstract Board startGame();

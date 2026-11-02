@@ -26,16 +26,14 @@ public class CloneExample2 implements Cloneable {
   @Override
   public CloneExample2 clone() { // deep copy!
     try { // always call super.clone() first! 
-      CloneExample2 cloned 
-        = (CloneExample2) super.clone(); // cast needed!
+      CloneExample2 cloned = (CloneExample2) super.clone(); // cast needed!
 
       // construct deep copies of left and right
       cloned.left // deep copy of left
         = new Complex(left.getReal(),
                       left.getImaginary());
       cloned.right // deep copy of right
-        = new Complex(right.getReal(),
-                      right.getImaginary());
+        = new Complex(right.getReal(), right.getImaginary());
       return cloned;
     } catch (CloneNotSupportedException e) {
       return null; // should not occur...
