@@ -148,10 +148,5 @@ public class PersonCtrl extends JFrame implements ActionListener{
         
     
     }
-    
-
-    
-
-
 
 }
